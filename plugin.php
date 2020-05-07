@@ -1,21 +1,21 @@
 <?php
 
 /*
-Plugin Name: Allow Forward Slashes in Short URLs
-Plugin URI: http://williambargent.co.uk
-Description: Allow Forward Slashes in Short URLs
+Plugin Name: Allow Some Other Characters In Short Urls
+Plugin URI: https://efprojects.com
+Description: Allow Some Other Characters In Short Urls
 Version: 1.0
-Author: William Bargent
-Author URI: http://williambargent.co.uk
+Author: Egor Aristov
+Author URI: https://efprojects.com
 */
 
-
+$chars = '/.';
 
 if( !defined( 'YOURLS_ABSPATH' ) ) die();
 
 yourls_add_filter( 'get_shorturl_charset', 'slash_in_charset' );
 function slash_in_charset( $in ) {
-        return $in.'/';
+        return $in.$chars;
 }
 
 
